@@ -1,0 +1,10 @@
+apiVersion: 1
+
+datasources:
+  - name: InfluxDB
+    type: influxdb
+    url: http://localhost:8086
+    database: kafkadb
+    user: mobius
+    password: 1234
+    isDefault: true
