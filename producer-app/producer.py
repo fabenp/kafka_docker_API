@@ -13,7 +13,7 @@ producer =KafkaProducer(bootstrap_servers=KAFKA_BROKER,api_version=(0,11,5),valu
 
 #get data from API
 
-API_KEY="cun2889r01qk7esjtjl0cun2889r01qk7esjtjlg"
+API_KEY="##############"
 SYMBOL= "AAPL"
 URL=f"https://finnhub.io/api/v1/quote?symbol={SYMBOL}&token={API_KEY}"
 
