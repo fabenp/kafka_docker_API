@@ -1,27 +1,47 @@
-Data pipeline with kafka and Dockerfile with API
+# Data pipeline with kafka and Docker with API
+
 
 This is a simple project with a pipeline in Docker using kafka to import data from an API , influxDB to store it and grafana to visualize it 
 
 the data source is finnhub. A free API key can be requested 
 
+
+finnhub (API) --> Producer (generate data)---> broker--->consumer--> InfluxDB ----> Grafana
+
+All this pipeline is inside docker with the following containers:
+- zookeeper
+- kafka
+- producer
+- consumer
+- influxdb
+- grafana
+  
+
 folder structure :
 
-│── docker-compose.yml
-│── producer-app
-│   ├── producer.py
-│   ├── requirements.txt
-│   ├── Dockerfile
-│
-│── consumer-app
-│   ├── consumer.py
-│   ├── requirements.txt
-│   ├── Dockerfile
+- docker-compose.yml
+- producer-app
+  - consumer.py
+  - Dockerfile
+  - requirements.txt
+- consumer-app
+  - consumer.py
+  - Dockerfile
+  - requirements.txt
+- grafana_provisioning
+   - datasources.yml
+- kafka
+    - server.properties
 
 how to start:
-install libraries : pip install kafka-python requests
 
-start docker Desktop
-from your project folder run : docker-compose up -d
+start docker Desktop (install it if you don't have it)
+request a key to run API from finnhub
+from your project folder run in cmd: docker-compose up -d
+
+Install libraries : pip install kafka-python requests
+
+
 
 
 InfluxDB:
